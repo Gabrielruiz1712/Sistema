@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Mews\Purifier\Casts\CleanHtml;
 use Mews\Purifier\Casts\CleanHtmlInput;
-use Mews\Purifier\Casts\CleanHtmlOutput;
+
 
 class EmpleadoController extends Controller
 {
