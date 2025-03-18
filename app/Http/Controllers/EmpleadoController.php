@@ -22,15 +22,34 @@ class EmpleadoController extends Controller
         $datos['empleados']=Empleado::paginate(5);
         return view('empleado.index',$datos);
     }
+    /*public function __construct(){
+        $this->middleware('can:crear empleado',[
+            'only'=>['create', 'store'],
+        ]);
+
+        $this->middleware('can:ver empleado',[
+            'only'=>['index'],
+        ]);
+
+        $this->middleware('can:editar empleado',[
+            'only'=>['show', 'edit','update'],
+        ]);
+
+        $this->middleware('can:borrar empleado',[
+            'only'=>['destroy', 'delete'],
+        ]);
+
+    }
+*/
     protected $casts = [
-        'bio'            => CleanHtml::class, // cleans both when getting and setting the value
+        'bio'            => CleanHtml::class,
         'Nombre'    => CleanHtmlInput::class,
         'ApellidoPaterno'    => CleanHtmlInput::class,
         'ApellidoMaterno'    => CleanHtmlInput::class,
         'Correo'    => CleanHtmlInput::class,
         'Telefono'    => CleanHtmlInput::class,
-        'Password'    => CleanHtmlInput::class, //
-        // cleans when getting the value
+        'Password'    => CleanHtmlInput::class,
+
     ];
 
     /**

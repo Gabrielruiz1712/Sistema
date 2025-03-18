@@ -20,6 +20,7 @@
 <a href="{{url('empleado/create')}}" class="btn btn-success" >NUEVO EMPLEADO</a>
 <br/>
 <br/>
+<div id="user-list"></div>
 <table class="table table-light">
 
     <thead class="thead-light">
@@ -74,6 +75,5 @@
 
 </table>
 {!! $empleados->links() !!}
-<a href="{{route('export')}}" class="btn btn-success" >Exportar</a>
 </div>
 @endsection

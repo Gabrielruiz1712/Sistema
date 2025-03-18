@@ -12,7 +12,7 @@
 
 
 @endif
-
+<link href="{{ mix('css/app.css') }}" rel="stylesheet">
 <div class="form-grup">
 
 <label for="Nombre"> Nombre </label>

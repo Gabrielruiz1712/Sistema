@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
+//use Illuminate\Support\Facades\Facade;
+
+//class Auth extends Facade{}
 
 
 /*
@@ -25,12 +28,12 @@ Route::get('/empleado', function () {
 Route::get('/empleado/create', [EmpleadoController::class,'create']);
 */
 Route::resource('empleado',EmpleadoController::class)->middleware('auth');
-//Auth::routes(['register'=>false,'reset'=>false]);
-Auth::routes();
+Auth::routes(['reset'=>false]);
+//Auth::routes();
 Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 Route::group(['midlewere'=>'auth'],function(){
 
     Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
-    route::get('/export',[EmpleadoController::class,'export'])->name('export');
+    //route::get('/export',[EmpleadoController::class,'export'])->name('export');
 
 });
